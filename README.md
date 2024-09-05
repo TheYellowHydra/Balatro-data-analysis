@@ -1,10 +1,6 @@
 # Project
 
-Title:
-Straight in balatro suck and I will proove it - Dumy version where a each iteration I try to proove straight suck but no
-Why I don't play straight in Balatro
-Straight  in Balatro is overpowered, but I don't play it
-Is Straight a good poker hand in Balatro?
+You will find an example of how use the modules in script folder.
 
 # Data and resources:
 Figure size : 1920 *1080 pixel
