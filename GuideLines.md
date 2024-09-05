@@ -6,16 +6,27 @@ Why I don't play straight in Balatro
 Straight  in Balatro is overpowered, but I don't play it
 Is Straight a good poker hand in Balatro?
 
-# Data:
-Figure size : 20 * 11.25 inches = 1920 *1080 pixel
+# Data and resources:
+Figure size : 1920 *1080 pixel
+[sseaborn](https://seaborn.pydata.org/)
+[Poker_probability](https://en.wikipedia.org/wiki/Poker_probability)
 
+[n-choose-k?n=13&k=4&order=0&repeat=0](https://www.hackmath.net/en/calculator/n-choose-k?n=13&k=4&order=0&repeat=0)
+
+
+
+
+Python modules:
+pandas : Version: 2.2.2
+seaborn : Version: 0.13.2
 
 
 # Intro
 After hours of playing , unlocking all jokers, 4 decks at max stack and a lot of win and loose.
 I can say it !
 I never play Straight in Balatro. I feel it is weak and hard to scale.
-In my monkey brain 5 card ordered is harder to get then 5 cards unordered of the same image. right?
+In my monkey brain 5 card ordered is harder to get that
+ 5 cards unordered of the same image. right?
 But may be Im wrong? 
 May be I suck at probabilities and can't see  the potential of Straight.
 This is why I decide to go back to statistics books and re-learn basic probabilties stuff and data vizalisation and share it with you what I'have discover 
@@ -109,8 +120,7 @@ And the worst one for four of kind is  2*4 + 60 * 7  = 476
 )
 
 Here's the visual representation of these datas as a lineplot
-![level0stats](vx_images/233284981195911.png)
-
+![level0stats](vx_images/14768175305662.png)
 I traced 3 lines to represent the differents scores of the first blinds : 300,450,600
 
 From this graph we can separete poker hand in two groups. 
@@ -173,11 +183,13 @@ Let's say I draw a 10 of spade. In this scenario what are the possible ways to b
 For straight there is 
 5 possible combinaison and for each card 4 value possible
 {show the combinaison)}
+```
 (10,J,Q,K,A)
 (9,10,J,Q,K)
 (8,9,10,J,Q)
 (7,8,9,10,J)
-(,6,7,8,9,10)
+,6,7,8,9,10)
+```
 It give us 
 so 5 *1 *4 *4 * 4 *4  = 1280  possible way to build a straght.
 
@@ -191,8 +203,8 @@ There 2.5 times more possibility to build a straight from a ten thant for a flus
 Ok but may be
 I see one one last possibility
 
-![level0stats](vx_images/199038130449294.png)
 
+![level0stats](vx_images/146566972701290.png)
 
 We do not have how much and wich combinaison can generate at least 300 points.
 By the way we calculate how much points we need. 
@@ -217,34 +229,38 @@ Let's this if we can visualize it.
 
 
 
-![combinaison score distribution level 0 all](vx_images/340564535453010.png)
+![catplot of combos level 0](vx_images/308106550693176.png)
 
 It'es great we can see the score distribution for each combinaison of each hand
 But there too much uncessary informations let's focus on combinaison with a score superior to 300
 
 
-
-![combinaison score distribution sup 300 level 0](vx_images/248000656336372.png)
+![catplot of combos level 0 above 300](vx_images/429528651626025.png)
 
 On this graph I have draw all the combinaison possible that generate more than 300 points.
 
 and here's the table
 
+
 ```
 Poker Hand
-Flush             341
-Full house         91
+Flush             380
+Full house         92
 Four of a kind     13
 Straight flush     10
 Straight            3
-
 ```
+
+
 Ha ha may be we have something, there is much leeeeeess possible combinaison for Straight than Flush
 
 The three straight combinaison are : 
-(10,J,Q,K,A)
-(9,10,J,Q,K)
-(8,9,10,J,Q)
+```
+    Poker Hand             combo  score
+123   Straight  [8, 9, 10, J, Q]    308
+124   Straight  [9, 10, J, Q, K]    316
+125   Straight  [10, J, Q, K, A]    324
+```
 
 Let's calculate all the possbie way to make them.
 Again for each card there if 4 possible suit.
@@ -255,7 +271,7 @@ for flush:
 341 possible combinaison times number of suit..
 
 
-341 * 4 = 1 364
+380 * 4 = 1 520
 
 
 Again 2.25 times less ...
@@ -272,17 +288,14 @@ Let's see on first poker hands levels the differences
 
 play meme sound stomp
 
-![poker hands average score to level 10](vx_images/381558155061639.png)
 
+![poker hands average score to level 9](vx_images/456423359476565.png)
 Damn boy. You see the big spike ine the middle, it's still Straight
 In term of scaling Straight stomp flush, full house and even compete with four of a kind
 
+We can see with only one level, straight can beat the first boss on average versus flush who need two level on average.
 
-Wee can see with only one level, straight can beat the first boss on average versus flush who need two level on average.
-![level1stats](vx_images/362425929484830.png)
-
-
-![level2stats](vx_images/401357294379329.png)
+![level1stats](vx_images/118884205002123.png)
 
 
 Again Straight overshadow flush really easely
@@ -321,14 +334,13 @@ pair, two pair, three of a kind work with it. It give use 9 jokers.
 ```
 
 ## 5. Conclusion 
-Straight if good, really good, it overclass flush on all domain
-(add picture of porbabilities, poker hand levels and jokers)
+Straight is wonderful, it surpass flush on all domain (probabilties, poker hand levels and jokers).
 I see only one negative points for straight.
-When I go for straight I feel trap in one way. I can't play other hand. Contrary as full house  can change later to four of a kind or five of a kind. And if for some reason I need to play an poker hand inferior I Can. With straight there is only on way.  Except that,  straight is good what ever was my feeling on it.
-I should give a try for my next games
+When I go for straight I feel trap in one way. I can't play others hands. Contrary to full house I can change later to four of a kind or five of a kind. And if for some reasons I need to play a inferior poker hand I can. With straight, there is only one way.  Except that,  straight is good what ever was my assumptions on it. I should give a try for my next games.
 Well the voyage was nice :)
+
 All resources and the script of this video are on the github repo you can found in description.
-Some resources will be added later because there some area I want to explore in balatro, may be for another video
+Some resources will be added later because there is some area I want to explore in Balatro, may be for another video
 Thanks for watching, have fun and see you soon
 
 ## 6. Misc
