@@ -1,0 +1,10 @@
+"Poker Hand","Base chips","Base mult","LevelUp chips","LevelUp mult"
+"High card",5,1,10,1
+"One pair",10,2,15,1
+"Two pair",20,2,20,1
+"Three of a kind",30,3,20,2
+"Straight",30,4,30,3
+"Flush",35,4,15,2
+"Full house",40,4,25,2
+"Four of a kind",60,7,30,3
+"Straight flush",100,8,40,4

@@ -1,0 +1,10 @@
+Poker Hand,Frequency,Probability,Combo
+High card,1302540,50.1177,13
+One pair,1098240,42.2569,13
+Two pair,123552,4.7539,78
+Three of a kind,54912,2.1128,13
+Straight,10200,0.3925,10
+Flush,5108,0.1965,1277
+Full house,3744,0.14441,156
+Four of a kind,624,0.02401,13
+Straight flush,36,0.00154,10
